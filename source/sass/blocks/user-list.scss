@@ -1,0 +1,52 @@
+.user-list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 285px;
+}
+
+.user-list__item {
+  display: flex;
+
+  margin-right: 35px;
+}
+
+.user-list__link {
+  font-size: 14px;
+  line-height: 21px;
+  color: $link-color;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .user-list {
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user-list__link {
+    font-size: 18px;
+    line-height: 23px;
+    color: $color--white;
+
+    &:hover,
+    &:focus {
+      color: rgba($color--white, 0.8);
+    }
+
+    &:active {
+      color: rgba($color--white, 0.6);
+    }
+  }
+}
