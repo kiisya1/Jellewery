@@ -1,11 +1,6 @@
 .header {
   position: relative;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-
   padding: calc(50% - 585px);
   padding-top: 41px;
   padding-bottom: 0;
@@ -27,6 +22,15 @@
   }
 }
 
+.header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
 .header__menu-toggle {
   display: none;
 }
@@ -38,35 +42,47 @@
 .header__search {
   margin-top: 4px;
   margin-right: auto;
+  margin-bottom: 45px;
 }
 
 .header__logo {
-  margin-bottom: 19px;
+  position: absolute;
+  top: 41px;
+  left: 50%;
 
-  transition: transform 400ms ease;
+  transform: translateX(-50%);
 }
 
 .header__logo[href] {
   &:hover,
-  &:focus,
+  &:focus {
+    opacity: 0.7;
+
+    outline: none;
+  }
+
   &:active {
-    transform: scale(1.04);
+    opacity: 0.5;
   }
 }
 
 .header__user-list {
-  margin-top: 4px;
+  margin-top: 12px;
   margin-left: auto;
 }
 
 .header__cart {
   display: flex;
 
-  margin-top: 4px;
+  margin-top: 12px;
 
   font-size: 14px;
   line-height: 21px;
   color: $link-color;
+
+  &--svg {
+    display: none;
+  }
 
   &:hover,
   &:focus {
@@ -79,7 +95,7 @@
 }
 
 .header__cart-quantity {
-  margin-left: 5px;
+  margin-left: 6px;
 }
 
 .header__cart-svg {
@@ -100,7 +116,10 @@
 
 @media (max-width: $tablet-width) {
   .header {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: flex-start;
 
     padding: 30px 45px;
     padding-bottom: 75px;
@@ -119,15 +138,48 @@
     }
   }
 
+  .header__wrapper {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    z-index: 100;
+
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 0 45px;
+    padding-bottom: 75px;
+    height: calc(100vh - 96px);
+
+    background-color: $background-color--brown;
+
+    overflow-y: auto;
+  }
+
   .header__menu-toggle {
     display: flex;
 
-    margin-top: 25px;
+    margin-top: 24px;
     margin-right: auto;
     padding: 0;
 
     background: transparent;
     border: none;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 
   .header__menu-toggle-svg {
@@ -136,9 +188,13 @@
 
   .header__logo {
     position: relative;
+    top: auto;
+    left: auto;
     margin-bottom: 0;
     width: 66px;
     height: 66px;
+
+    transform: translateX(0);
 
     &::after {
       content: "";
@@ -158,9 +214,27 @@
   }
 
   .header__cart {
-    margin-top: 25px;
+    display: none;
+
+    margin-top: 24px;
     margin-left: auto;
-    padding-left: 7px;
+    margin-right: -1px;
+    padding-left: 6px;
+
+    &--svg {
+      display: block;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+
+        outline: none;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
   }
 
   .header__cart-text,
@@ -178,7 +252,7 @@
   .header__search {
     margin: 0;
     margin-top: 40px;
-    margin-bottom: 45px;
+    margin-bottom: 46px;
 
     order: 4;
   }
@@ -219,10 +293,19 @@
     stroke: $dark;
   }
 
-  .header--closed .header__search,
-  .header--closed .header__nav,
-  .header--closed .header__sub-nav,
-  .header--closed .header__user-list {
+  .header--closed .header__wrapper {
+    display: none;
+  }
+
+  .header--no-js .header__wrapper {
+    position: static;
+    padding: 0;
+
+    height: auto;
+    overflow: visible;
+  }
+
+  .header--no-js .header__menu-toggle {
     display: none;
   }
 }
@@ -237,7 +320,17 @@
     }
   }
 
+  .header__wrapper {
+    top: 102px;
+    z-index: 100;
+
+    padding: 0 15px;
+    padding-bottom: 45px;
+    height: calc(100vh - 102px);
+  }
+
   .header__logo {
+    margin-bottom: 36px;
     width: 52px;
     height: 52px;
 
@@ -247,14 +340,19 @@
     }
   }
 
+  .header__logo-image {
+    width: 52px;
+    height: 52px;
+  }
+
   .header__menu-toggle,
   .header__cart {
-    margin-top: 18px;
+    margin-top: 17px;
   }
 
   .header__search {
-    margin-top: 30px;
-    margin-bottom: 35px;
+    margin-top: 0;
+    margin-bottom: 36px;
   }
 
   .header__main-nav {
@@ -263,5 +361,10 @@
 
   .header__sub-nav {
     margin-bottom: 35px;
+  }
+
+  .header--no-js .header__wrapper {
+    padding: 0;
+    height: auto;
   }
 }

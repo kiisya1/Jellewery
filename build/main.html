@@ -45,76 +45,81 @@
     </div>
 
     <div class="wrapper">
-      <header class="wrapper__header header">
+      <header class="wrapper__header header header--no-js">
 
         <button class="header__menu-toggle header__menu-toggle--no-js" type="button">
-          <svg class="header__menu-toggle-svg" width="25" height="16">
+          <svg class="header__menu-toggle-svg" width="25" height="18">
             <use xlink:href="#icon-menu"></use>
           </svg>
           <span class="visually-hidden">Открыть меню</span>
         </button>
 
-        <form class="header__search search" action="https://echo.htmlacademy.ru" method="get">
-          <div class="search__input-field">
-            <label>
-              <svg width="14" height="14">
-                <use xlink:href="#icon-magnifier"></use>
-              </svg>
-              <span class="visually-hidden">Search</span>
-              <input type="text" name="search" placeholder="Type here to search" required="">
-            </label>
-          </div>
-        </form>
-
         <a class="header__logo">
           <img class="header__logo-image" src="img/logo.svg" width="66" height="66" alt="Логотип компании Jellewery">
         </a>
 
-        <ul class="header__user-list user-list">
-          <li class="user-list__item">
-            <a class="user-list__link" href="login.html">Login</a>
-          </li>
-        </ul>
-
-        <a class="header__cart" href="#">
-          <span class="header__cart-text">Cart</span>
-          <span class="header__cart-quantity">0</span>
-          <svg class="header__cart-svg" width="18" height="16">
+        <a class="header__cart header__cart--svg" href="#">
+          <svg class="header__cart-svg" width="20" height="18">
             <use xlink:href="#icon-cart"></use>
           </svg>
         </a>
 
-        <nav class="header__nav">
-          <ul class="header__main-nav main-nav">
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">What’s new</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Chokers</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Necklaces</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Rings</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Earrings</a>
+        <div class="header__wrapper">
+          <form class="header__search search" action="https://echo.htmlacademy.ru" method="get">
+            <div class="search__input-field">
+              <label>
+                <svg width="14" height="14">
+                  <use xlink:href="#icon-magnifier"></use>
+                </svg>
+                <span class="visually-hidden">Search</span>
+                <input type="text" name="search" placeholder="Type here to search" required="">
+              </label>
+            </div>
+          </form>
+
+          <ul class="header__user-list user-list">
+            <li class="user-list__item">
+              <a class="user-list__link" href="login.html">Login</a>
             </li>
           </ul>
 
-          <ul class="header__sub-nav sub-nav">
-            <li class="sub-nav__item">
-              <a class="sub-nav__link" href="#">About CH</a>
-            </li>
-            <li class="sub-nav__item">
-              <a class="sub-nav__link" href="#">Stores & Hours</a>
-            </li>
-            <li class="sub-nav__item">
-              <a class="sub-nav__link" href="#">Contact Us</a>
-            </li>
-          </ul>
-        </nav>
+          <a class="header__cart" href="#">
+            <span class="header__cart-text">Cart</span>
+            <span class="header__cart-quantity">0</span>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="header__main-nav main-nav">
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">What’s new</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Chokers</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Necklaces</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Rings</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Earrings</a>
+              </li>
+            </ul>
+
+            <ul class="header__sub-nav sub-nav">
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">About CH</a>
+              </li>
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">Stores & Hours</a>
+              </li>
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
       </header>
 
