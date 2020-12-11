@@ -25,6 +25,7 @@
   line-height: 21px;
 
   border: none;
+  border-bottom: 1px solid transparent;
 
   &::placeholder {
     color: $color--light;

@@ -1,0 +1,14 @@
+.title {
+  margin: 0;
+
+  font-family: $extra-font;
+  font-weight: $font-bold;
+  font-size: $extra-size;
+  line-height: $extra-height;
+  color: $color--base;
+  letter-spacing: 0.025em;
+
+  &--white {
+    color: $color--white;
+  }
+}

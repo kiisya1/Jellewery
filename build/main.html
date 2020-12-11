@@ -24,7 +24,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-down" viewBox="0 0 17 10">
 <path d="M1 1L8.5 9L16 1" stroke="#A87B62"></path>
 </symbol><symbol id="icon-arrow" viewBox="0 0 30 11">
-<path d="M30 5.5L1 5.5M1 5.5L6.48649 10M1 5.5L6.48649 1" stroke="#A87B62"></path>
+<path d="M30 5.5L1 5.5M1 5.5L6.48649 10M1 5.5L6.48649 1"></path>
 </symbol><symbol id="icon-cart" viewBox="0 0 20 18">
 <path d="M14 5C14 6.06087 13.5786 7.07828 12.8284 7.82843C12.0783 8.57857 11.0609 9 10 9C8.93913 9 7.92172 8.57857 7.17157 7.82843C6.42143 7.07828 6 6.06087 6 5M1 1H19V17H1V1Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </symbol><symbol id="icon-close" viewBox="0 0 14 14">
@@ -128,7 +128,92 @@
       </main>
 
       <footer class="wrapper__footer footer">
+        <section class="footer__signup signup">
+          <h2 class="signup__title title title--white">The good stuff in&nbsp;your inbox</h2>
+          <p class="signup__description">News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+          <form class="signup__form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="signup__input-field">
+              <label>
+                <span class="visually-hidden">E-mail</span>
+                <input type="email" name="signup-email" placeholder="Your E-mail" required="">
+              </label>
+            </div>
+            <button type="submit">
+              <span>Sign Up</span>
+              <svg width="30" height="11">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
+            </button>
+          </form>
+        </section>
 
+        <section class="footer__links">
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Ordering &amp;&nbsp;Payment</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Terms &amp;&nbsp;Conditions</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Returns &amp;&nbsp;Exchanges</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Delivery</a>
+            </li>
+          </ul>
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">About CH</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Stores &amp;&nbsp;Hours</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Jobs</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer__socials socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="8" height="15">
+                  <use xlink:href="#icon-fb"></use>
+                </svg>
+                <span class="socials__link-text">Facebook</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="15" height="15">
+                  <use xlink:href="#icon-insta"></use>
+                </svg>
+                <span class="socials__link-text">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="15" height="15">
+                  <use xlink:href="#icon-pinterest"></use>
+                </svg>
+                <span class="socials__link-text">Pinterest</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg socials__link-svg--twitter" width="15" height="13">
+                  <use xlink:href="#icon-twitter"></use>
+                </svg>
+                <span class="socials__link-text">Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </section>
       </footer>
     </div>
 

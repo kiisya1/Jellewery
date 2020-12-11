@@ -1,0 +1,149 @@
+.signup {
+  width: 500px;
+}
+
+.signup__title {
+  margin-bottom: 9px;
+}
+
+.signup__description {
+  margin: 0;
+  margin-bottom: 36px;
+  padding-left: 1px;
+
+  font-weight: $font-normal;
+  color: $color--light;
+}
+
+.signup__form {
+  display: flex;
+  width: 501px;
+}
+
+.signup__input-field {
+  width: 397px;
+}
+
+.signup__input-field input {
+  padding: 8px 0;
+  padding-right: 31px;
+  width: 100%;
+
+  font-family: $standard-font;
+  color: $color--white;
+  font-weight: $font-medium;
+  font-size: 14px;
+  line-height: 21px;
+
+  background-color: $background-color--dark;
+  border: none;
+  border-bottom: 1px solid $white;
+
+  &::placeholder {
+    color: $color--light;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-bottom: 1px solid rgba($white, 0.7);
+
+    outline: none;
+  }
+}
+
+.signup__form button[type="submit"] {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  width: 104px;
+
+  font-family: $standard-font;
+  color: $color--white;
+  font-weight: $font-medium;
+  font-size: 16px;
+  line-height: 21px;
+
+  background-color: $background-color--dark;
+  border: none;
+  border-bottom: 1px solid $white;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.signup__form svg {
+  margin-left: 12px;
+
+  stroke: $white;
+
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1098px) {
+  .signup {
+    width: 560px;
+  }
+
+  .signup__form {
+    width: 560px;
+  }
+
+  .signup__input-field {
+    width: 457px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .signup {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .signup__form {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .signup__input-field {
+    width: calc(100% - 103px);
+  }
+
+  .signup__title {
+    margin-bottom: 13px;
+  }
+
+  .signup__description {
+    margin-bottom: 33px;
+    padding-left: 0;
+
+    line-height: 22px;
+  }
+
+  .signup__form button[type="submit"] {
+    align-items: baseline;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 559px) {
+  .signup__title {
+    width: 214px;
+  }
+
+  .signup__description {
+    width: 226px;
+  }
+}
