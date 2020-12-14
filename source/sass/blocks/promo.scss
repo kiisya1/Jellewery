@@ -1,0 +1,102 @@
+.promo {
+  margin-bottom: 120px;
+  padding: 160px;
+  padding-top: 181px;
+  min-height: 463px;
+
+  font-family: $extra-font;
+  color: $color--white;
+
+  background-color: $background-color--brown;
+  background-image: url("../img/bg-promo@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-promo@2x.jpg");
+  }
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.promo__title {
+  margin: 0;
+  padding-left: 1px;
+
+  font-size: 45px;
+  line-height: 58px;
+  font-weight: $font-bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.promo__subtitle {
+  margin: 0;
+  margin-top: -6px;
+  padding-left: 1px;
+
+  font-size: 38px;
+  line-height: 49px;
+  font-weight: $font-normal;
+  font-style: italic;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+@media (max-width: $tablet-width) {
+  .promo {
+    margin-bottom: 70px;
+
+    background-image: url("../img/bg-promo-tablet@1x.jpg");
+    background-position: top left 55%;
+    background-size: cover;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-promo-tablet@2x.jpg");
+    }
+
+    box-shadow: none;
+  }
+
+  .promo__title {
+    padding-left: 0;
+    padding-right: 18px;
+  }
+
+  .promo__subtitle {
+    padding-left: 0;
+    padding-right: 19px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promo {
+    margin-bottom: 60px;
+    padding: 180px 40px;
+    padding-top: 189px;
+
+    background-image: url("../img/bg-promo-mobile@1x.jpg");
+    background-position: top left 46.5%;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-promo-mobile@2x.jpg");
+    }
+  }
+
+  .promo__title {
+    padding: 0;
+
+    font-size: 38px;
+    line-height: 49px;
+  }
+
+  .promo__subtitle {
+    padding: 0;
+    margin-top: -7px;
+
+    font-size: 34px;
+    line-height: 44px;
+  }
+}

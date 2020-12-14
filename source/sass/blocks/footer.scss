@@ -38,6 +38,7 @@
 
 .footer__links-link {
   color: $color--white;
+  text-transform: capitalize;
 
   &:hover,
   &:focus {
