@@ -1,0 +1,31 @@
+.link {
+  display: inline-block;
+  padding-bottom: 4px;
+
+  color: $link-color;
+  text-transform: capitalize;
+
+  border-bottom: 1px solid $sienna;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+    border-bottom: 1px solid $link-color--active;
+  }
+
+  &--no-indent {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .link {
+    &--no-indent {
+      padding-bottom: 4px;
+    }
+  }
+}

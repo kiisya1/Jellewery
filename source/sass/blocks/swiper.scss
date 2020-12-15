@@ -312,13 +312,24 @@
 }
 
 .swiper-pagination-bullet {
-  width: 6px;
-  height: 6px;
+  width: auto;
+  height: 21px;
   display: inline-block;
   vertical-align: middle;
-  border-radius: 100%;
-  background: $dark;
-  opacity: 0.2;
+  border-radius: 0;
+  background: transparent;
+  opacity: 1;
+
+  color: $color--light;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
 }
 
 button.swiper-pagination-bullet {
@@ -337,10 +348,25 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-bullet-active {
-  width: 8px;
-  height: 8px;
+  width: auto;
+  height: 21px;
   opacity: 1;
-  background: blue;
+  background: transparent;
+
+  color: $color--base;
+
+  &:hover,
+  &:focus {
+    color: $color--base;
+  }
+
+  &:active {
+    color: $color--base;
+  }
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet-active {
+  cursor:default;
 }
 
 .swiper-container-vertical > .swiper-pagination-bullets {
@@ -373,7 +399,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 4px;
+  margin: 0 6px;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
@@ -718,4 +744,22 @@ button.swiper-pagination-bullet {
 .swiper-container-coverflow .swiper-wrapper {
   /* Windows 8 IE 10 fix */
   -ms-perspective: 1200px;
+}
+
+@media (max-width: $tablet-width) {
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6.5px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .swiper-pagination-current {
+    display: inline-block;
+    margin-right: 4px;
+    width: 9px;
+  }
+
+  .swiper-pagination-total {
+    margin-left: 5px;
+  }
 }

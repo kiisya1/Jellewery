@@ -41,7 +41,7 @@ $gray: #9b9997;
 $background-color: $white;
 $background-color--gray: rgba($dark, 0.25);
 $background-color--dark: $black;
-$background-color--ligh: $pearl;
+$background-color--light: $pearl;
 $background-color--brown: $sienna;
 
 /* Основные цвета текста */
@@ -53,7 +53,7 @@ $color--dark: $black;
 
 /* Основные цвета ссылки */
 
-$link-color: $dark;
+$link-color: $color--base;
 $link-color--hover: $sienna;
 $link-color--active: darken($link-color--hover, 10%);
 
