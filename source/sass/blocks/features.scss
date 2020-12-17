@@ -1,0 +1,31 @@
+.features {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.features__list {
+  @include reset-list;
+}
+
+.features__item {
+  display: flex;
+  margin-bottom: 11px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #f6f5f4;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.features__name {
+  margin: 0;
+}
+
+.features__value {
+  margin: 0;
+  margin-left: auto;
+
+  font-weight: $font-normal;
+}

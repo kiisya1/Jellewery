@@ -47,4 +47,8 @@
       border: 1px solid $btn-background--active;
     }
   }
+
+  &--no-transform {
+    text-transform: none;
+  }
 }

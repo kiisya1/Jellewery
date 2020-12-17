@@ -17,4 +17,12 @@
   &--capitalize {
     text-transform: capitalize;
   }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--no-spacing {
+    letter-spacing: normal;
+  }
 }
