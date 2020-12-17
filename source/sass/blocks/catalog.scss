@@ -1,0 +1,32 @@
+.catalog {
+  display: flex;
+
+  padding: 0 calc(50% - 585px);
+}
+
+.catalog__filter {
+  margin-right: 50px;
+}
+
+@media (max-width: 1260px) {
+  .catalog {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .catalog {
+    flex-direction: column;
+  }
+
+  .catalog__filter {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .catalog {
+    padding: 0 15px;
+  }
+}

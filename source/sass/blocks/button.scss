@@ -1,0 +1,50 @@
+.button {
+  display: block;
+  padding: 23.5px;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-family: $standard-font;
+  font-size: 16px;
+  line-height: 21px;
+  color: $color--white;
+  text-transform: capitalize;
+  font-weight: $font-medium;
+  text-align: center;
+
+  border: none;
+  border-radius: 0;
+  background-color: $btn-background;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: $btn-background--hover;
+    outline: none;
+  }
+
+  &:active {
+    background: $btn-background--active;
+  }
+
+  &--white {
+    padding: 22.5px;
+    color: $color--base;
+
+    border: 1px solid $btn-background;
+    background-color: $btn-background--light;
+
+    &:hover,
+    &:focus {
+      color: $btn-background--hover;
+      border: 1px solid $btn-background--hover;
+      outline: none;
+    }
+
+    &:active {
+      color: $btn-background--active;
+      border: 1px solid $btn-background--active;
+    }
+  }
+}

@@ -21,7 +21,9 @@
 .main-nav__link {
   line-height: 24px;
   color: $link-color;
+}
 
+.main-nav__link[href] {
   &:hover,
   &:focus {
     color: $link-color--hover;

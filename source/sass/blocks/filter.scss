@@ -1,0 +1,647 @@
+.filter {
+  width: 250px;
+}
+
+.filter__open-button,
+.filter__close-button {
+  display: none;
+}
+
+.filter__list {
+  @include reset-list;
+  margin-bottom: 35px;
+
+  border: 1px solid $sienna;
+}
+
+.filter__item {
+  padding: 23px;
+  padding-left: 25px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid $sienna;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.filter__feature {
+  &--active {
+    margin-bottom: 23px;
+  }
+}
+
+.filter__feature button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 0;
+  width: 100%;
+
+  box-sizing: border-box;
+
+  font-family: $standard-font;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color--base;
+  font-weight: $font-medium;
+  text-align: left;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+
+    outline: none;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}
+
+.filter__feature svg {
+  margin-left: auto;
+  margin-top: 5px;
+
+  fill: none;
+  stroke: $sienna;
+}
+
+.filter__feature--active svg {
+  transform: rotate(180deg);
+}
+
+.filter__checkbox-list {
+  display: none;
+
+  @include reset-list;
+  margin-bottom: 6px;
+}
+
+.filter__checkbox-item {
+  margin-bottom: 12px;
+  padding-left: 9px;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filter__checkbox-item label {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding-top: 0;
+  padding-left: 25px;
+  padding-bottom: 0;
+
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: transparent;
+    border: 1px solid $sienna;
+  }
+
+  &:hover {
+    color: $link-color--hover;
+
+    &::before {
+      opacity: 0.8;
+    }
+  }
+}
+
+.filter__checkbox-item input:checked ~ label {
+  &::before {
+    background-color: $background-color--brown;
+  }
+}
+
+.filter__checkbox-item input:focus ~ label {
+  color: $link-color--hover;
+  outline: 5px auto -webkit-focus-ring-color;
+
+  &::before {
+    opacity: 0.8;
+  }
+}
+
+.filter__range {
+  margin-top: -5px;
+  padding-right: 2px;
+  padding-top: 1px;
+}
+
+.filter__scale {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px;
+
+  width: 100%;
+  height: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $background-color--light;
+
+    transform: translateY(-50%);
+  }
+}
+
+.filter__bar {
+  position: relative;
+  z-index: 5;
+  margin-top: 7px;
+  margin-left: 60px;
+  width: 45%;
+  height: 1px;
+
+  background-color: $background-color--brown;
+}
+
+.filter__scale button {
+  position: absolute;
+  top: 0;
+
+  padding: 0;
+  margin: 0;
+  width: 15px;
+  height: 15px;
+
+  background-color: $background-color--brown;
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  &:first-of-type {
+    left: 44px;
+  }
+
+  &:last-of-type {
+    right: 34px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($background-color--brown, 10%);
+  }
+}
+
+.filter__controls {
+  display: flex;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.filter__controls label {
+  margin-left: 37px;
+  margin-bottom: -4px;
+  display: flex;
+
+  &:last-of-type {
+    margin-left: 57px;
+  }
+}
+
+.filter__controls input[type="number"] {
+  padding: 0;
+  margin-left: 3px;
+  width: 34px;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  border: none;
+
+  appearance: textfield;
+}
+
+.filter__controls input[type="number"]::-webkit-outer-spin-button,
+.filter__controls input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.filter__form button[type="submit"],
+.filter__form button[type="reset"] {
+  display: block;
+  padding: 23.5px;
+  width: 100%;
+
+  font-size: 16px;
+  line-height: 21px;
+  color: $color--white;
+  text-transform: capitalize;
+
+  border: none;
+  border-radius: 0;
+  background-color: $btn-background;
+
+  cursor: pointer;
+}
+
+.filter__form button[type="submit"] {
+  margin-bottom: 25px;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-background--hover;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $btn-background--active;
+  }
+}
+
+.filter__form button[type="reset"] {
+  margin-bottom: 0;
+  padding: 22.5px;
+  color: $color--base;
+
+  border: 1px solid $btn-background;
+  background-color: $btn-background--light;
+
+  &:hover,
+  &:focus {
+    color: $btn-background--hover;
+    border: 1px solid $btn-background--hover;
+    outline: none;
+  }
+
+  &:active {
+    color: $btn-background--active;
+    border: 1px solid $btn-background--active;
+  }
+}
+
+.filter__feature--active ~ .filter__checkbox-list,
+.filter__feature--active ~ .filter__range {
+  display: block;
+}
+
+.filter--no-js .filter__checkbox-list,
+.filter--no-js .filter__range {
+  display: block;
+}
+
+.filter--no-js .filter__feature {
+  margin-bottom: 23px;
+}
+
+@media (max-width: $tablet-width) {
+  .filter {
+    width: 100%;
+  }
+
+  .filter__open-button {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .filter__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 110;
+
+    padding-top: 27px;
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+
+    background-color: $background-color--gray;
+
+    &--closed {
+      display: none;
+    }
+  }
+
+  .filter__form {
+    margin-left: -19px;
+    padding-bottom: 40px;
+    width: 442px;
+    height: auto;
+
+    background-color: $background-color;
+    box-shadow: $shadow-filter;
+  }
+
+  .filter__list {
+    margin-bottom: 40px;
+
+    border: none;
+  }
+
+  .filter__item {
+    padding: 34px;
+    padding-left: 40px;
+    padding-right: 39px;
+
+    border-bottom: 1px solid $sienna;
+
+    &:last-child {
+      border-bottom: 1px solid $sienna;
+    }
+  }
+
+  .filter__feature {
+    &--active {
+      margin-bottom: 24px;
+    }
+  }
+
+  .filter__feature button {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .filter__feature svg {
+    margin-top: 5px;
+    width: 25px;
+    height: 14px;
+  }
+
+  .filter__checkbox-list {
+    margin-bottom: 3px;
+  }
+
+  .filter__checkbox-item {
+    margin-bottom: 17px;
+    padding-left: 10px;
+
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .filter__checkbox-item label {
+    padding-left: 30px;
+
+    &::before {
+      top: 1px;
+
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .filter__range {
+    width: 304px;
+    margin-top: -1px;
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 1px;
+  }
+
+  .filter__scale {
+    margin-bottom: 7px;
+    height: 18px;
+  }
+
+  .filter__bar {
+    margin-top: 9px;
+    margin-left: 63px;
+    width: 158px;
+  }
+
+  .filter__scale button {
+    top: 1px;
+
+    width: 18px;
+    height: 18px;
+
+    &:first-of-type {
+      left: 45px;
+    }
+
+    &:last-of-type {
+      right: 55px;
+    }
+  }
+
+  .filter__controls {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .filter__controls label {
+    margin-left: 37px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-left: 110px;
+    }
+  }
+
+  .filter__controls input[type="number"] {
+    margin-left: 3px;
+    width: 50px;
+
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .filter__form button[type="submit"],
+  .filter__form button[type="reset"] {
+    display: block;
+    margin: 0 auto;
+    width: calc(100% - 80px);
+  }
+
+  .filter__form button[type="submit"] {
+    margin-bottom: 25px;
+  }
+
+  .filter__close-button {
+    position: absolute;
+    top: 11px;
+    left: 406px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    width: 32px;
+    height: 32px;
+
+    background-color: $dark;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-background--hover;
+      outline: none;
+    }
+
+    &:active {
+      background-color: $btn-background--active;
+    }
+  }
+
+  .filter--no-js .filter__feature {
+    margin-bottom: 26px;
+  }
+
+  .filter--no-js .filter__container--closed {
+    position: static;
+    display: block;
+    height: auto;
+
+    padding-top: 0;
+
+    transform: translateY(0);
+
+    background-color: $background-color;
+  }
+
+  .filter--no-js .filter__form {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 40px;
+
+    box-shadow: none;
+  }
+
+  .filter--no-js .filter__open-button,
+  .filter--no-js .filter__close-button {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .filter__open-button {
+    margin-bottom: 40px;
+  }
+
+  .filter__container {
+    top: 50%;
+
+    padding-top: 16px;
+
+    transform: translateY(-50%);
+  }
+
+  .filter__form {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 270px;
+  }
+
+  .filter__list {
+    margin-bottom: 30px;
+  }
+
+  .filter__item {
+    padding: 24px 20px;
+    padding-bottom: 24px;
+
+    &--small-padding {
+      padding: 24px 10px;
+    }
+  }
+
+  .filter__item--small-padding .filter__feature {
+    padding: 0 10px;
+  }
+
+  .filter__feature svg {
+    margin-top: 5px;
+    width: 21px;
+    height: 13px;
+  }
+
+  .filter__checkbox-item {
+    padding-left: 10px;
+  }
+
+  .filter__range {
+    width: 250px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .filter__bar {
+    margin-left: 58px;
+    width: 120px;
+  }
+
+  .filter__scale button {
+    &:first-of-type {
+      left: 40px;
+    }
+
+    &:last-of-type {
+      right: 54px;
+    }
+  }
+
+  .filter__controls {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .filter__controls label {
+    margin-left: 32px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-left: 72px;
+    }
+  }
+
+  .filter__form button[type="submit"],
+  .filter__form button[type="reset"] {
+    width: calc(100% - 40px);
+  }
+
+  .filter__form button[type="submit"] {
+    margin-bottom: 20px;
+  }
+
+  .filter__close-button {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 113px);
+  }
+}
