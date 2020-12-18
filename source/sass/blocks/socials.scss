@@ -100,8 +100,12 @@
 
   .socials__link-svg {
     margin-right: 0;
-    width: auto;
+    width: 20px;
     height: 21px;
+
+    &--fb {
+      width: 12px;
+    }
 
     &--twitter {
       width: 20px;

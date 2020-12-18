@@ -1,6 +1,6 @@
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   &--page {
@@ -160,7 +160,7 @@
 
 .login--page .login__body {
   position: static;
-  margin: 0;
+  margin: 0 auto;
 }
 
 @media (max-width: $tablet-width) {
