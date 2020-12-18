@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Jellewery</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="Description" content="Jellewery">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preload" href="fonts/poppins-medium.woff2" as="font" crossorigin="anonymous">
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="visually-hidden">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+
+    <div class="wrapper">
+      <header class="wrapper__header header header--no-js">
+
+        <button class="header__menu-toggle header__menu-toggle--no-js" type="button">
+          <svg class="header__menu-toggle-svg" width="25" height="18">
+            <use xlink:href="#icon-menu"></use>
+          </svg>
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+
+        <a class="header__logo" href="main.html">
+          <img class="header__logo-image" src="img/logo.svg" width="66" height="66" alt="Логотип компании Jellewery">
+        </a>
+
+        <a class="header__cart header__cart--svg" href="#">
+          <svg class="header__cart-svg" width="20" height="18">
+            <use xlink:href="#icon-cart"></use>
+          </svg>
+        </a>
+
+        <div class="header__wrapper">
+          <form class="header__search search" action="https://echo.htmlacademy.ru" method="get">
+            <div class="search__input-field">
+              <label>
+                <svg width="14" height="14">
+                  <use xlink:href="#icon-magnifier"></use>
+                </svg>
+                <span class="visually-hidden">Search</span>
+                <input type="text" name="search" placeholder="Type here to search" required>
+              </label>
+            </div>
+          </form>
+
+          <ul class="header__user-list user-list">
+            <li class="user-list__item">
+              <a class="user-list__link" href="login.html">Login</a>
+            </li>
+          </ul>
+
+          <a class="header__cart" href="#">
+            <span class="header__cart-text">Cart</span>
+            <span class="header__cart-quantity">0</span>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="header__main-nav main-nav">
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">What’s new</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Chokers</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Necklaces</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Rings</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="catalog.html">Earrings</a>
+              </li>
+            </ul>
+
+            <ul class="header__sub-nav sub-nav">
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">About CH</a>
+              </li>
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">Stores & Hours</a>
+              </li>
+              <li class="sub-nav__item">
+                <a class="sub-nav__link" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </header>
+
+      <main class="wrapper__main">
+
+        <section class="add-to-cart add-to-cart--page">
+          <div class="add-to-cart__body">
+            <h1 class="add-to-cart__title">The item was added to&nbsp;your cart</h1>
+            <section class="add-to-cart__purchase">
+              <div class="add-to-cart__product">
+                <div class="add-to-cart__product-info purchase">
+                  <picture>
+                    <source type="image/webp" srcset="img/add-item@1x.webp 1x, img/add-item@2x.webp 2x">
+                    <!-- 1х: 88px; 2x: 176px -->
+                    <img class="purchase__img" src="img/add-item@1x.jpg" srcset="img/add-item@2x.jpg 2x" loading="lazy" width="88" height="79" alt="Gold Necklace" data-object-fit="cover">
+                  </picture>
+                  <div class="purchase__text">
+                    <p class="purchase__name">Gold Necklace</p>
+                    <p class="purchase__price">$ 115</p>
+                  </div>
+                </div>
+                <div class="add-to-cart__quantity">
+                  <button class="add-to-cart__add-button add-to-cart__add-button--add" type="button"></button>
+                  <span class="add-to-cart__number">1</span>
+                  <button class="add-to-cart__add-button add-to-cart__add-button--remove" type="button"></button>
+                </div>
+              </div>
+              <p class="add-to-cart__in-cart">You have 1 item in the cart</p>
+              <p class="add-to-cart__subtotal">Cart subtotal: $ 115</p>
+            </section>
+            <div class="add-to-cart__buttons">
+              <a class="add-to-cart__button button button--white  button--no-transform" href="catalog.html">Continue shopping</a>
+              <a class="add-to-cart__button button" href="#">Checkout</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="wrapper__footer footer">
+        <section class="footer__signup signup">
+          <h2 class="signup__title title title--white">The good stuff in&nbsp;your inbox</h2>
+          <p class="signup__description">News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+          <form class="signup__form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="signup__input-field">
+              <label>
+                <span class="visually-hidden">E-mail</span>
+                <input type="email" name="signup-email" placeholder="Your E-mail" required>
+              </label>
+            </div>
+            <button type="submit">
+              <span>Sign Up</span>
+              <svg width="30" height="11">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <section class="footer__links">
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Ordering &amp;&nbsp;payment</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Terms &amp;&nbsp;conditions</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Returns &amp;&nbsp;exchanges</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Delivery</a>
+            </li>
+          </ul>
+          <ul class="footer__links-list">
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">About CH</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Stores &amp;&nbsp;hours</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Jobs</a>
+            </li>
+            <li class="footer__links-item">
+              <a class="footer__links-link" href="#">Contact us</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer__socials socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="8" height="15">
+                  <use xlink:href="#icon-fb"></use>
+                </svg>
+                <span class="socials__link-text">Facebook</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="15" height="15">
+                  <use xlink:href="#icon-insta"></use>
+                </svg>
+                <span class="socials__link-text">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg" width="15" height="15">
+                  <use xlink:href="#icon-pinterest"></use>
+                </svg>
+                <span class="socials__link-text">Pinterest</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <svg class="socials__link-svg socials__link-svg--twitter" width="15" height="13">
+                  <use xlink:href="#icon-twitter"></use>
+                </svg>
+                <span class="socials__link-text">Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </footer>
+    </div>
+
+    <section class="modal modal--closed login">
+      <div class="modal__body login__body">
+        <button class="modal__close modal__close--big" type="button">
+          <svg class="modal__close-svg" width="14" height="14">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+          <span class="visually-hidden">Close</span>
+        </button>
+        <h2 class="login__title title title--no-spacing">Log In</h2>
+
+        <form class="login__form" action="https://echo.htmlacademy.ru" method="post" id="login__modal">
+
+          <div class="login__input-field">
+            <input type="email" name="email" placeholder="Your E-mail" id="email-field" required>
+            <label for="email-field">
+              <span class="visually-hidden">Your E-mail</span>
+            </label>
+          </div>
+
+          <div class="login__input-field">
+            <input type="password" name="password" placeholder="Password" id="password-field" required>
+            <label for="password-field">
+              <span class="visually-hidden">Password</span>
+            </label>
+            <a href="#">Forgot your password?</a>
+          </div>
+
+          <button type="submit">
+            <span>Log in</span>
+          </button>
+        </form>
+
+        <p class="login__no-account">
+          <span>Don’t have an account?</span>
+          <a class="login__sign-up" href="">Sign up</a>
+        </p>
+      </div>
+    </section>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -39,7 +39,30 @@
   var sliderCardContainer = document.querySelector('.product-card__container');
   if (sliderCardContainer) {
     var sliderCardPagination = sliderCardContainer.querySelector('.swiper-pagination');
-    var sliderCardWrapper = sliderCardContainer.querySelector('.swiper-wrapper');
+  }
+
+  var loginLink = document.querySelector('.user-list__link');
+  var loginModal = document.querySelector('.login');
+  if (loginModal) {
+    var loginForm = loginModal.querySelector('.login__form');
+    var emailInput = loginForm.querySelector('#email-field');
+  }
+
+  var addToCartLink = document.querySelector('.product-card__button');
+  var addToCartModal = document.querySelector('.add-to-cart');
+
+  var loginFocusTrap = createFocusTrap(loginModal);
+  var addToCartFocusTrap = createFocusTrap(addToCartModal);
+
+  var isStorageSupport = true;
+  var storage = '';
+
+  /* Проверка доступности localStorage  */
+
+  try {
+    storage = localStorage.getItem('email');
+  } catch (err) {
+    isStorageSupport = false;
   }
 
   /* Меню */
@@ -64,10 +87,6 @@
   }
 
   /* Получение положения на странице при открытии поп-апа */
-
-  var existVerticalScroll = function () {
-    return document.body.offsetHeight > window.innerHeight;
-  };
 
   var getBodyScrollTop = function () {
     return (
@@ -358,6 +377,142 @@
       initSwiper();
     });
   }
+
+  /* Слушатель события клика по ссылке Логин */
+
+  if (loginLink) {
+    loginLink.addEventListener('click', function (evt) {
+      if (loginModal) {
+        evt.preventDefault();
+
+        openLogin();
+      }
+    });
+  }
+
+  /* Функция открытия поп-апа */
+
+  var openModal = function (modal, closeFunction, focusTrap) {
+    if (modal.classList.contains('modal--closed')) {
+      modal.classList.remove('modal--closed');
+
+      var modalCloseButton = modal.querySelector('.modal__close');
+      modalCloseButton.addEventListener('click', closeFunction);
+
+      blockPage();
+      focusTrap.activate();
+    }
+  };
+
+  /* Функция закрытия поп-апа */
+
+  var closeModal = function (modal, closeFunction, focusTrap) {
+    if (!modal.classList.contains('modal--closed')) {
+      modal.classList.add('modal--closed');
+      var modalCloseButton = modal.querySelector('.modal__close');
+      modalCloseButton.removeEventListener('click', closeFunction);
+      unblockPage();
+      focusTrap.deactivate();
+    }
+  };
+
+  /* Функция закрытия поп-апа Логин при клике на оверфлоу */
+
+  var onLoginOverflowClick = function (evt) {
+    if (evt.target === loginModal) {
+      closeLogin();
+    }
+  };
+
+  /* Функция закрытия поп-апа Логин при нажатии на Escape */
+
+  var onLoginKeydown = function (evt) {
+    if (evt.keyCode === 27) {
+      closeLogin();
+    }
+  };
+
+  /* Функция отправки формы Логин */
+
+  var onLoginFormSubmit = function (evt) {
+    evt.preventDefault();
+
+    if (isStorageSupport) {
+      localStorage.setItem('email', emailInput.value);
+    }
+
+    closeLogin();
+  };
+
+  /* Функция открытия поп-апа Логин */
+
+  var openLogin = function () {
+    openModal(loginModal, closeLogin, loginFocusTrap);
+    loginModal.addEventListener('click', onLoginOverflowClick);
+    document.addEventListener('keydown', onLoginKeydown);
+    loginForm.addEventListener('submit', onLoginFormSubmit);
+    emailInput.focus();
+
+    if (isStorageSupport) {
+      if (storage) {
+        emailInput.value = storage;
+      }
+    }
+  };
+
+  /* Функция закрытия поп-апа Логин */
+
+  var closeLogin = function () {
+    closeModal(loginModal, closeLogin, loginFocusTrap);
+    loginModal.removeEventListener('click', onLoginOverflowClick);
+    document.removeEventListener('keydown', onLoginKeydown);
+    loginForm.removeEventListener('submit', onLoginFormSubmit);
+  };
+
+
+  /* Слушатель события клика по ссылке Добавления в корзину */
+
+  if (addToCartLink) {
+    addToCartLink.addEventListener('click', function (evt) {
+      if (addToCartModal) {
+        evt.preventDefault();
+
+        openAddToCart();
+      }
+    });
+  }
+
+  /* Функция закрытия поп-апа добавления в корзину при клике на оверфлоу */
+
+  var onAddToCartOverflowClick = function (evt) {
+    if (evt.target === addToCartModal) {
+      closeAddToCart();
+    }
+  };
+
+  /* Функция закрытия поп-апа добавления в корзину при нажатии на Escape */
+
+  var onAddToCartKeydown = function (evt) {
+    if (evt.keyCode === 27) {
+      closeAddToCart();
+    }
+  };
+
+  /* Функция открытия поп-апа добавления в корзину */
+
+  var openAddToCart = function () {
+    openModal(addToCartModal, closeAddToCart, addToCartFocusTrap);
+    addToCartModal.addEventListener('click', onAddToCartOverflowClick);
+    document.addEventListener('keydown', onAddToCartKeydown);
+  };
+
+  /* Функция закрытия поп-апа добавления в корзину */
+
+  var closeAddToCart = function () {
+    closeModal(addToCartModal, closeAddToCart, addToCartFocusTrap);
+    addToCartModal.removeEventListener('click', onAddToCartOverflowClick);
+    document.removeEventListener('keydown', onAddToCartKeydown);
+  };
 
 
 })();

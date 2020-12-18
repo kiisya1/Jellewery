@@ -1,0 +1,86 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+
+  overflow-y: auto;
+
+  background-color: $background-color--gray;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.modal__body {
+  position: relative;
+
+  height: auto;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  width: 14px;
+  height: 14px;
+
+  background: transparent;
+  border: none;
+  border-radius: 0; /* Убирает скругление углов кнопок по умолчанию в Edge */
+
+  cursor: pointer;
+  outline: none;
+}
+
+.modal__close-svg {
+  fill: $link-color;
+}
+
+.modal__close:hover .modal__close-svg,
+.modal__close:focus .modal__close-svg {
+  fill: $link-color--hover;
+}
+
+.modal__close:active .modal__close-svg {
+  fill: $link-color--active;
+}
+
+@media (max-width: $tablet-width) {
+  .modal__close--big {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal__close--big .modal__close-svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .modal__close {
+    top: 15px;
+    right: 15px;
+
+    &--big {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .modal__close--big .modal__close-svg {
+    width: 14px;
+    height: 14px;
+  }
+}

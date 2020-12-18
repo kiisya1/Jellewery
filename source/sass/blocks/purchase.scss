@@ -1,0 +1,65 @@
+.purchase {
+  display: flex;
+  margin-bottom: 40px;
+  width: 400px;
+}
+
+.purchase__img {
+  display: block;
+  margin-top: 4px;
+  margin-right: 20px;
+
+  width: 84px;
+  height: 79px;
+}
+
+.purchase__name {
+  margin: 0;
+  margin-top: -1px;
+  margin-bottom: 8px;
+
+  font-family: $extra-font;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: $font-bold;
+}
+
+.purchase__price {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: $font-normal;
+}
+
+@media (max-width: $tablet-width) {
+  .purchase__img {
+    width: 88px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .purchase {
+    margin-bottom: 30px;
+    width: 220px;
+  }
+
+  .purchase__img {
+    margin-top: 3px;
+    margin-right: 15px;
+    width: 70px;
+    height: 63px;
+  }
+
+  .purchase__name {
+    margin-bottom: 5px;
+
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .purchase__price {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}

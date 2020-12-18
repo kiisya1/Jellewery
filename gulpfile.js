@@ -62,7 +62,6 @@ gulp.task('images', function () {
         verbose: true
       }))
       .pipe(gulp.dest('source/img'));
-
 });
 
 gulp.task('webp', function () {

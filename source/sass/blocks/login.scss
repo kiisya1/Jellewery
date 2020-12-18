@@ -1,0 +1,224 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--page {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.login__body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  padding: 54px 45px;
+  padding-top: 188px;
+  width: 430px;
+
+  box-shadow: $shadow-login;
+  background-color: $background-color--light;
+  background-image: url("../img/bg-login@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-login@2x.jpg");
+  }
+}
+
+.login__title {
+  margin-bottom: 23px;
+}
+
+.login__input-field {
+  margin-bottom: 25px;
+  width: 100%;
+
+  &:last-of-type {
+    margin-bottom: 45px;
+  }
+}
+
+.login__form {
+  margin-bottom: 15px;
+}
+
+.login__input-field input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 8px;
+
+  font-family: $standard-font;
+  font-size: 14px;
+  line-height: 21px;
+  color: $input-color;
+  font-weight: $font-medium;
+
+  background-color: $input-background;
+  border: none;
+  border-bottom: $input-border;
+  border-radius: 0;
+
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $color--light;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.login__input-field a {
+  margin: 0;
+  margin-top: 5px;
+  margin-left: auto;
+  display: block;
+  width: 140px;
+
+  font-size: 12px;
+  line-height: 18px;
+  color: $color--light;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}
+
+.login__form button[type="submit"] {
+  display: block;
+  padding: 23.5px;
+  padding-top: 24px;
+  padding-bottom: 23px;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-family: $standard-font;
+  font-size: 16px;
+  line-height: 21px;
+  color: $color--white;
+  text-transform: capitalize;
+  font-weight: $font-medium;
+  text-align: center;
+
+  border: none;
+  border-radius: 0;
+  background-color: $btn-background;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: $btn-background--hover;
+    outline: none;
+  }
+
+  &:active {
+    background: $btn-background--active;
+  }
+}
+
+.login__no-account {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: $color--light;
+  text-align: center;
+}
+
+.login__sign-up {
+  margin: 0 5px;
+  color: $link-color;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}
+
+.login--page .login__body {
+  position: static;
+  margin: 0;
+}
+
+@media (max-width: $tablet-width) {
+  .login__body {
+    padding: 54px 51px;
+    padding-top: 188px;
+    width: 442px;
+
+    background-image: url("../img/bg-login-tablet@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-login-tablet@2x.jpg");
+    }
+  }
+
+  .login__sign-up {
+    margin: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .login__body {
+    padding: 39px 15px;
+    padding-top: 121px;
+    width: 270px;
+
+    background-image: url("../img/bg-login-mobile@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-login-mobile@2x.jpg");
+    }
+  }
+
+  .login__title {
+    margin-bottom: 19px;
+
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .login__input-field {
+    margin-bottom: 22px;
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+  }
+
+  .login__form {
+    margin-bottom: 15px;
+  }
+
+  .login__input-field input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .login__input-field a {
+    margin-right: -1px;
+  }
+}

@@ -56,7 +56,9 @@
     font-size: 24px;
     line-height: 36px;
     color: $color--white;
+  }
 
+  .main-nav__link[href] {
     &:hover,
     &:focus {
       color: rgba($color--white, 0.8);
