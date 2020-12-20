@@ -37,6 +37,14 @@
 
     outline: none;
   }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
 }
 
 @media (max-width: $tablet-width) {

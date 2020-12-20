@@ -149,6 +149,7 @@
 }
 
 .filter__range {
+  display: none;
   margin-top: -5px;
   padding-right: 2px;
   padding-top: 1px;
@@ -159,23 +160,21 @@
 
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px;
+  //margin-bottom: 20px;
 
   width: 100%;
-  height: 15px;
+  height: 35px;
 
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 7px;
     left: 0;
 
     width: 100%;
     height: 1px;
 
     background-color: $background-color--light;
-
-    transform: translateY(-50%);
   }
 }
 
@@ -199,6 +198,9 @@
   width: 15px;
   height: 15px;
 
+  font-size: 14px;
+  line-height: 18px;
+
   background-color: $background-color--brown;
   border: none;
   border-radius: 50%;
@@ -220,41 +222,16 @@
   }
 }
 
-.filter__controls {
-  display: flex;
+.filter__scale span {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
 
-  font-size: 14px;
-  line-height: 18px;
+  width: 50px;
+
+  transform: translateX(-50%);
 }
 
-.filter__controls label {
-  margin-left: 37px;
-  margin-bottom: -4px;
-  display: flex;
-
-  &:last-of-type {
-    margin-left: 57px;
-  }
-}
-
-.filter__controls input[type="number"] {
-  padding: 0;
-  margin-left: 3px;
-  width: 34px;
-
-  font-size: 14px;
-  line-height: 18px;
-
-  border: none;
-
-  appearance: textfield;
-}
-
-.filter__controls input[type="number"]::-webkit-outer-spin-button,
-.filter__controls input[type="number"]::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
-}
 
 .filter__form button[type="submit"],
 .filter__form button[type="reset"] {
@@ -429,8 +406,11 @@
   }
 
   .filter__scale {
-    margin-bottom: 7px;
-    height: 18px;
+    height: 46px;
+
+    &::before {
+      top: 9px;
+    }
   }
 
   .filter__bar {
@@ -445,6 +425,9 @@
     width: 18px;
     height: 18px;
 
+    font-size: 16px;
+    line-height: 21px;
+
     &:first-of-type {
       left: 45px;
     }
@@ -454,26 +437,8 @@
     }
   }
 
-  .filter__controls {
-    font-size: 16px;
-    line-height: 21px;
-  }
-
-  .filter__controls label {
-    margin-left: 37px;
-    margin-bottom: 0;
-
-    &:last-of-type {
-      margin-left: 110px;
-    }
-  }
-
-  .filter__controls input[type="number"] {
-    margin-left: 3px;
-    width: 50px;
-
-    font-size: 16px;
-    line-height: 21px;
+  .filter__scale span {
+    bottom: -27px;
   }
 
   .filter__form button[type="submit"],
@@ -611,26 +576,15 @@
   }
 
   .filter__scale button {
+    font-size: 16px;
+    line-height: 21px;
+
     &:first-of-type {
       left: 40px;
     }
 
     &:last-of-type {
       right: 54px;
-    }
-  }
-
-  .filter__controls {
-    font-size: 16px;
-    line-height: 21px;
-  }
-
-  .filter__controls label {
-    margin-left: 32px;
-    margin-bottom: 0;
-
-    &:last-of-type {
-      margin-left: 72px;
     }
   }
 

@@ -20,42 +20,6 @@
   }
 }
 
-.pagination__button {
-  display: block;
-  padding: 0;
-  width: 75px;
-  box-sizing: border-box;
-
-  font-family: $standard-font;
-  font-size: 16px;
-  line-height: 21px;
-  color: $link-color;
-  font-weight: $font-medium;
-  text-align: left;
-
-  background: $btn-background--light;
-  border: none;
-  border-radius: 0;
-
-  cursor: pointer;
-
-  &--next {
-    margin-left: auto;
-
-    text-align: right;
-  }
-
-  &:hover,
-  &:focus {
-    color: $link-color--hover;
-    outline: none;
-  }
-
-  &:active {
-    color: $link-color--active;
-  }
-}
-
 .pagination__list {
   @include reset-list;
 
@@ -75,6 +39,23 @@
 
 .pagination__link {
   color: $color--light;
+
+  &--prev,
+  &--next {
+    display: block;
+    padding: 0;
+    width: 75px;
+    box-sizing: border-box;
+
+    color: $link-color;
+    text-align: left;
+  }
+
+  &--next {
+    margin-left: auto;
+
+    text-align: right;
+  }
 
   &[href] {
     &:hover,
@@ -120,8 +101,11 @@
     }
   }
 
-  .pagination__button {
-    display: none;
+  .pagination__link {
+    &--prev,
+    &--next {
+      display: none;
+    }
   }
 
   .pagination__item {
